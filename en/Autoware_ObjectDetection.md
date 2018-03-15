@@ -33,8 +33,12 @@ Camera-lidar pair needs to be precisely calibrated to determine the distance of 
 
 In Autoware, there are several different algorithms available for pedesterian/car detection:
 
-* **Yolo2**: it is very fast object detector using neural network to predict bounding boxes and other neural network for classification
-* ...
+* **yolo2_wa**: Yolo is very fast object detector using neural network to predict bounding boxes and other neural network for classification. Requires Darknet.
+* **dpm_ocv** : Deformable Part-based Models classifier from OpenCV. It is based on a Dalal-Triggs detector that uses a single filter on histogram of oriented gradients (HOG) features to represent an object category. 
+* **dpm_ttic** : other implementation of **Deformable Part-based Models** classifier residing in residing in "computing/detection/lib/image/dpm_ttic" package
+* **rcnn_msr** : Fast Region-based Convolutional Networks for object detection created by Ross Girshick at Microsoft Research. The work is described in https://arxiv.org/abs/1504.08083. Requires Caffe. *This package is now deprecated and there is a faster version.*
+* **ssd_unc** : Single Shot MultiBox Detector. SSD is an unified framework for object detection with a single network. You can use the code to train/evaluate a network for object detection task. Details: https://arxiv.org/abs/1512.02325 .
+
 
 ### Configuration
 
